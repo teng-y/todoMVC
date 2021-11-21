@@ -15,7 +15,7 @@
             </li>
         </ul>
         <!-- Hidden if no completed items are left ↓ -->
-        <button class="clear-completed" @click="clearDone">Clear completed</button>
+        <button class="clear-completed" v-show="showClearCompleted" @click="clearDone">Clear completed</button>
     </footer>
 </template>
 
@@ -35,6 +35,9 @@ export default {
         },
         showFooter(){
             return this.todoList.length
+        },
+        showClearCompleted(){
+            return this.todoList.some(item=>item.done)
         }
     }
 }
