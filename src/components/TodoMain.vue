@@ -57,7 +57,7 @@ export default {
       });
       this.isEditing = "";
     },
-    //取消修改
+    //鼠标失去焦点取消修改
     cancelEdit() {
       this.isEditing = "";
     },
@@ -71,6 +71,7 @@ export default {
     ...mapState({
       todoList: "todoList"
     }),
+    //全选按钮控制
     checkAll: {
       get() {
         return this.todoList.every(item => item.done);

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations , mapGetters } from "vuex";
 export default {
     name:"Footer",
     methods:{
@@ -31,9 +31,11 @@ export default {
     },
     computed:{
         ...mapState({todoList:'todoList'}),
-        num(){
-            return this.todoList.filter(item=>!item.done).length
-        },
+        ...mapGetters({num:'num'}),
+        // num(){
+        //     return this.todoList.filter(item=>!item.done).length
+        //     // return this.todoList.reduce((prev,item)=>prev +(!item.done?1 : 0),0)
+        // },
         showFooter(){
             return this.todoList.length
         },

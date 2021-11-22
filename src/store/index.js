@@ -46,8 +46,15 @@ const mutations = {
         state.todoList.forEach(item=>item.done = payload)
     }
 }
+const getters = {
+    num(state){
+        return state.todoList.filter(item=>!item.done).length
+        // return this.todoList.reduce((prev,item)=>prev +(!item.done?1 : 0),0)
+    },
+}
 export const store = new Vuex.Store({
     strict:true,
     state,
-    mutations
+    mutations,
+    getters
 })
