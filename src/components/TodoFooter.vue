@@ -20,13 +20,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
     name:"Footer",
     methods:{
-        clearDone(){
-            this.$store.commit('clearDone')
-        }
+        ...mapMutations(['clearDone'])
+        // clearDone(){
+        //     this.$store.commit('clearDone')
+        // }
     },
     computed:{
         ...mapState({todoList:'todoList'}),

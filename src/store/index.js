@@ -5,11 +5,12 @@ import Vuex from "vuex";
 Vue.use(Vuex)
 //注册Vuex
 const state = {
-    todoList:[
-        {id:"001",name:"游泳",done:false},
-        {id:"002",name:"吃饭",done:true},
-        {id:"003",name:"跳舞",done:false},
-      ]
+    // todoList:[
+    //     {id:"001",name:"游泳",done:false},
+    //     {id:"002",name:"吃饭",done:true},
+    //     {id:"003",name:"跳舞",done:false},
+    //   ],
+    todoList:JSON.parse(localStorage.getItem('todoList')) || []
 }
 const mutations = {
     //点击选择按钮改变li状态
